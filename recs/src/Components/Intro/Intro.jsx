@@ -2,9 +2,9 @@ import React from 'react'
 import './Intro.css'
 function Intro() {
   return (
-  <div className="intro-main">
-<div className="intro-text">
-    Select your movie
+  <div className="Intro-main">
+<div className="Intro-text">
+   <span>Select your movie</span> 
 </div>
   </div>
   )
