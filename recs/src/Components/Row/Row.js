@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from "react"
-import axios from 'axios';
+import './Row.css'
 function Row() {
-  const [users, setUsers] = useState([])
-  const fetchData = () => {
-    axios.get("https://jsonplaceholder.typicode.com/users").then(response => {
-      setUsers(response.data)
-    })
-  }
-
+  const [popular, setPopular] = useState([]);
+    const url =
+      "https://api.themoviedb.org/3/movie/popular?api_key=57e19e5c44a33653ce6bfc54743c9e2e&language=en-US&page=1";
   useEffect(() => {
-    fetchData()
-  }, [])
+      fetchPopular();
+    },[]);
+  const fetchPopular = async () => {
+      const data = await fetch(url);
+      const movies = await data.json();
+      console.log(movies);
+      setPopular(movies.results);
+    };
   return (
-    <div>
-         {users.length > 0 && (
-        <ul>
-          {users.map(user => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
-      )}
-    </div>
-  )
-}
+      <div className="Main">
+     <h1>Movies</h1>
+     <div className="Row-items">
+     {popular.map(results => {
+        return <p>{results.title}</p>;
+      })}
+     </div>
+      
+      </div>
+    );
+  };
 
 export default Row
 

@@ -1,0 +1,9 @@
+.Main{
+display: flex;
+flex-direction: column;
+
+}
+.Row-items{
+    display: flex;
+    flex-direction: row;
+}
