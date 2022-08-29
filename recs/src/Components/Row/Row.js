@@ -1,31 +1,41 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from "react"
 import axios from 'axios'
-import { useState } from 'react';
-
-const BASE_URL = "https://api.themoviedb.org/3";
-
-const api_key = "57e19e5c44a33653ce6bfc54743c9e2e";
-
-
 function Row() {
-    const [data , setData] = useState([]);
+  const [users, setUsers] = useState([])
+  const fetchData = () => {
+    axios.get("https://jsonplaceholder.typicode.com/users").then(response => {
+      setUsers(response.data)
+    })
+  }
 
-    const api = axios.create({baseURL: BASE_URL});
-
-    const getPopular = api.get("movie/popular", { 
-        params: { api_key } 
-      });
-
-      useEffect(() => {
-        
-      }, []);
+  useEffect(() => {
+    fetchData()
+  }, [])
   return (
-   
-     <div>
-      
-     </div>
-    
+    <div>
+         {users.length > 0 && (
+        <ul>
+          {users.map(user => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </ul>
+      )}
+    </div>
   )
 }
 
 export default Row
+
+
+
+
+
+
+
+
+  
+   
+   
+  
+
+
