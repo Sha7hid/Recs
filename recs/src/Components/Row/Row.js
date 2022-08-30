@@ -16,7 +16,7 @@ function Row() {
   return (
       <div className="Main">
      <h1>Movies</h1>
-     <div className="Row">
+     <div className="Row-item">
      {popular.map(results => {
         return <p>{results.title}</p>;
       })}
