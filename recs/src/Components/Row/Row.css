@@ -12,3 +12,7 @@ flex-direction: column;
     display: flex;
     width: 50vh;
 }
+Image-wrap{
+    display: flex;
+    flex-direction: column;
+}

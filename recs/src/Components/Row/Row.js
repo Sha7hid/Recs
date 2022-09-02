@@ -25,8 +25,8 @@ function Row() {
         <img
           key={results.movie?.id}
           className="Row-img"
-          src={`${image_url}${isLargeRow ? results.poster_path : results.backdrop_path}`} alt={results.original_title}></img></div>
-       <div className="Text-wrap"><p>{results.title}</p></div> 
+          src={`${image_url}${isLargeRow ? results.poster_path : results.backdrop_path}`} alt={results.original_title}></img>
+      <p>{results.title}</p></div> 
           </>;
       })}
      </div>
