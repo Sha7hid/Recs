@@ -19,15 +19,18 @@ function Row() {
      <h1>Movies</h1>
      <div className="Row-item">
      {popular.map(results => {
-        return <p>{results.title}</p>
-        <img 
-        key={results.movie?.id}
-        className="Row-img"
-        src={`${image_url}${isLargeRow ? results.poster_path : results.backdrop_path}`} alt={results.original_title}></img>;
+        return <>
+        {/* several row posters*/ }
+        <img
+          key={results.movie?.id}
+          className="Row-img"
+          src={`${image_url}${isLargeRow ? results.poster_path : results.backdrop_path}`} alt={results.original_title}></img>
+         <br/> <p>{results.title}</p>
+          </>;
       })}
      </div>
      <div className='row_posters'>
-{/* several row posters*/ }
+
 {popular?.map(results => {
    
 })}
