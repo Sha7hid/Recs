@@ -6,13 +6,21 @@ flex-direction: column;
 .Row-item{
     display: flex;
     flex-direction: row;
-
+   row-gap: 2rem;
+   column-gap: 2rem;
+   overflow-y:hidden;
+overflow-x: scroll;
+padding: 20px;
+}
+.Row-item::-webkit-scrollbar{
+    display: none;
 }
 .Row-img{
     display: flex;
     width: 50vh;
 }
-Image-wrap{
+.Image-wrap{
     display: flex;
     flex-direction: column;
+  
 }
