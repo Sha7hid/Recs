@@ -24,3 +24,8 @@ padding: 20px;
     flex-direction: column;
   
 }
+@media screen and (max-width: 480px) {
+    .Row-img{
+        width: 35vh;
+    }
+}
