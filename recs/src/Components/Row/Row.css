@@ -7,3 +7,8 @@ flex-direction: column;
     display: flex;
     flex-direction: row;
 }
+.Row-img{
+    display: flex;
+    width: 50vh;
+   
+}

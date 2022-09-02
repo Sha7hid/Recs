@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
 import './Row.css'
 function Row() {
-  const [popular, setPopular] = useState([]);
+  const [popular, setPopular, isLargeRow] = useState([]);
     const url =
       "https://api.themoviedb.org/3/movie/popular?api_key=57e19e5c44a33653ce6bfc54743c9e2e&language=en-US&page=1";
-  useEffect(() => {
+  const image_url = "https://image.tmdb.org/t/p/original/";
+      useEffect(() => {
       fetchPopular();
     },[]);
   const fetchPopular = async () => {
@@ -18,10 +19,19 @@ function Row() {
      <h1>Movies</h1>
      <div className="Row-item">
      {popular.map(results => {
-        return <p>{results.title}</p>;
+        return <p>{results.title}</p>
+        <img 
+        key={results.movie?.id}
+        className="Row-img"
+        src={`${image_url}${isLargeRow ? results.poster_path : results.backdrop_path}`} alt={results.original_title}></img>;
       })}
      </div>
-      
+     <div className='row_posters'>
+{/* several row posters*/ }
+{popular?.map(results => {
+   
+})}
+       </div>
       </div>
     );
   };
