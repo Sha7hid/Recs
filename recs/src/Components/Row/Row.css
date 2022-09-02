@@ -26,6 +26,9 @@ padding: 20px;
 }
 @media screen and (max-width: 480px) {
     .Row-img{
-        width: 35vh;
+        width: 40vh;
+    }
+    .Row-item{
+        
     }
 }
