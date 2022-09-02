@@ -6,6 +6,7 @@ flex-direction: column;
 .Row-item{
     display: flex;
     flex-direction: row;
+
 }
 .Row-img{
     display: flex;
