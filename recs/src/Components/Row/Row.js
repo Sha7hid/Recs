@@ -23,8 +23,8 @@ function Row() {
       console.log(rec_url);
 
    
-    }
-  
+    };
+ 
    
     
    
@@ -60,6 +60,7 @@ function Row() {
           src={`${image_url}${isLargeRow ? results.poster_path : results.backdrop_path}`} alt={results.original_title}></img>
       <p className="title">{results.title}</p></div> 
       
+
       
           </>;
       })}
