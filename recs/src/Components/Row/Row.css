@@ -11,24 +11,29 @@ flex-direction: column;
    overflow-y:hidden;
 overflow-x: scroll;
 padding: 20px;
+cursor: pointer;
 }
-.Row-item::-webkit-scrollbar{
-    display: none;
-}
+
 .Row-img{
     display: flex;
     width: 50vh;
 }
+.Row-item::-webkit-scrollbar{
+    display: none;
+}
+
 .Image-wrap{
     display: flex;
     flex-direction: column;
   
 }
+.title{
+    font-weight: bold;
+    
+}
 @media screen and (max-width: 480px) {
     .Row-img{
         width: 40vh;
     }
-    .Row-item{
-        
-    }
+    
 }
