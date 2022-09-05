@@ -4,6 +4,7 @@ import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css/pagination';
+
 function Row() {
   const [popular, setPopular, isLargeRow] = useState([]);
   
