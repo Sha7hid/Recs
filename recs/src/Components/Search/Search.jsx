@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-
+import './Search.css'
 function Search() {
     const [movie, setMovie,] = useState([])
 
@@ -21,7 +21,8 @@ function Search() {
         {setMovie.length > 0 && (
             <ul>
  {movie.map(results => {
-    return (<li>{results.original_title}</li>)
+    return (
+    <div className="list"><a href=""><li>{results.original_title}</li></a></div>)
 })}
 </ul>
          )}

@@ -1,0 +1,16 @@
+li{
+    list-style-type: none;
+    background-color: rebeccapurple;
+   
+}
+.list{
+padding-bottom: 1rem;
+
+
+
+}
+a{
+    cursor: pointer;
+    text-decoration: none !important;
+    color: aliceblue;
+}
