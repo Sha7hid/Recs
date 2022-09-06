@@ -32,6 +32,7 @@ cursor: pointer;
     font-weight: bold;
     
 }
+
 @media screen and (max-width: 480px) {
     .Row-img{
         width: 40vh;

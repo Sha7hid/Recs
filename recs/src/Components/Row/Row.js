@@ -51,6 +51,7 @@ function Row() {
      <SwiperSlide> <div className="Row-item">
      {popular.map(results => {
         return <>
+       
         {/* several row posters*/ }
         <div className="Image-wrap">
         <img

@@ -17,6 +17,7 @@ function Search() {
   
     return (
       <div>
+        <p>Select your movie or search here</p>
         <input onChange={fetchData} label="Search User" />
         {setMovie.length > 0 && (
             <ul>

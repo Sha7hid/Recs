@@ -14,3 +14,7 @@ a{
     text-decoration: none !important;
     color: aliceblue;
 }
+p{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
