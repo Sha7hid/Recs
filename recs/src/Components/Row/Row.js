@@ -36,7 +36,7 @@ function Row() {
       setPopular(movies.results);
     };
   return (
-    
+
     <Swiper
     modules={[ Pagination, Scrollbar, A11y]}
 
@@ -47,7 +47,7 @@ function Row() {
     
   >
       <div className="Main">
-     <h1>Popular Movies</h1>
+     
      <SwiperSlide> <div className="Row-item">
      {popular.map(results => {
         return <>
