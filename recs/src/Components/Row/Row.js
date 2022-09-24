@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 
 function Row() {
   const [popular, setPopular, isLargeRow] = useState([]);
-  
+  let rec_url;
     const url =
       "https://api.themoviedb.org/3/movie/popular?api_key=57e19e5c44a33653ce6bfc54743c9e2e&language=en-US&page=1";
   const image_url = "https://image.tmdb.org/t/p/original/";
@@ -18,7 +18,7 @@ function Row() {
     const handleClick = (results)  => {
   
       const movie_id = (results.id);
-      const rec_url =`https://api.themoviedb.org/3/movie/${movie_id}/recommendations?api_key=57e19e5c44a33653ce6bfc54743c9e2e&language=en-US&page=1`;
+       rec_url =`https://api.themoviedb.org/3/movie/${movie_id}/recommendations?api_key=57e19e5c44a33653ce6bfc54743c9e2e&language=en-US&page=1`;
       
       console.log(results.id);
       console.log(rec_url);
@@ -61,7 +61,7 @@ function Row() {
           className="Row-img"
           src={`${image_url}${isLargeRow ? results.poster_path : results.backdrop_path}`} alt={results.original_title}></img>
       <p className="title">{results.title}</p></div> 
-      
+      <p>{rec_url}</p>
 
       
           </>;
