@@ -10,20 +10,20 @@ function Row() {
   const [recUrl, setRecurl] = useState([]);
   let rec_url;
   let movie_id;
+
     const url =
       "https://api.themoviedb.org/3/movie/popular?api_key=57e19e5c44a33653ce6bfc54743c9e2e&language=en-US&page=1";
   const image_url = "https://image.tmdb.org/t/p/original/";
   
       useEffect(() => {
       fetchPopular();
-    
+
     },[]);
     const handleClick = (results)  => {
   
        movie_id = (results.id);
        rec_url =`https://api.themoviedb.org/3/movie/${movie_id}/recommendations?api_key=57e19e5c44a33653ce6bfc54743c9e2e&language=en-US&page=1`;
       
-      console.log(results.id);
       
   
    
