@@ -24,7 +24,7 @@ function Row() {
        rec_url =`https://api.themoviedb.org/3/movie/${movie_id}/recommendations?api_key=57e19e5c44a33653ce6bfc54743c9e2e&language=en-US&page=1`;
       
       console.log(results.id);
-      console.log(recUrl);
+      
   
    
     };
@@ -43,6 +43,7 @@ function Row() {
       const data = await fetch(rec_url);
       const movies = await data.json();
       setRecurl(movies.results);
+      console.log(movies.results);
     }
   return (
 
@@ -75,9 +76,11 @@ function Row() {
       </div> 
      <div>
      {recUrl.map(results => {
-return<>
+return <>
 <p>{results.title}</p>
 </>
+
+
 
      })}
      </div>
