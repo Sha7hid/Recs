@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 
 function Row() {
   const [popular, setPopular, isLargeRow] = useState([]);
-  const [recUrl, setRecurl] = useState("");
+  const [recUrl, setRecurl] = useState([]);
   let rec_url;
   let movie_id;
     const url =
@@ -16,6 +16,7 @@ function Row() {
   
       useEffect(() => {
       fetchPopular();
+      fetchRecs();
     },[]);
     const handleClick = (results)  => {
   
@@ -24,7 +25,7 @@ function Row() {
       
       console.log(results.id);
       console.log(recUrl);
-  setRecurl(rec_url)
+  
    
     };
  
@@ -37,6 +38,12 @@ function Row() {
      
       setPopular(movies.results);
     };
+
+    const fetchRecs = async () => {
+      const data = await fetch(rec_url);
+      const movies = await data.json();
+      setRecurl(movies.results);
+    }
   return (
 
     <Swiper
@@ -63,10 +70,17 @@ function Row() {
           className="Row-img"
           src={`${image_url}${isLargeRow ? results.poster_path : results.backdrop_path}`} alt={results.original_title}></img>
       <p className="title">{results.title}</p>
-      <p className="title">{results.overview}</p>
+   
     
       </div> 
-     
+     <div>
+     {recUrl.map(results => {
+return<>
+<p>{results.title}</p>
+</>
+
+     })}
+     </div>
     
       
           </>;
