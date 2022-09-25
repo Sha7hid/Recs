@@ -16,7 +16,7 @@ function Row() {
   
       useEffect(() => {
       fetchPopular();
-      fetchRecs();
+    
     },[]);
     const handleClick = (results)  => {
   
@@ -39,12 +39,7 @@ function Row() {
       setPopular(movies.results);
     };
 
-    const fetchRecs = async () => {
-      const data = await fetch(rec_url);
-      const movies = await data.json();
-      setRecurl(movies.results);
-      console.log(movies.results);
-    }
+    
   return (
 
     <Swiper
@@ -74,16 +69,6 @@ function Row() {
    
     
       </div> 
-     <div>
-     {recUrl.map(results => {
-return <>
-<p>{results.title}</p>
-</>
-
-
-
-     })}
-     </div>
     
       
           </>;
