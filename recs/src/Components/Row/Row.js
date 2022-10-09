@@ -19,13 +19,20 @@ function Row() {
       fetchPopular();
 
     },[]);
-    const handleClick = (results)  => {
+    const handleClick = async (results)  => {
   
        movie_id = (results.id);
        rec_url =`https://api.themoviedb.org/3/movie/${movie_id}/recommendations?api_key=57e19e5c44a33653ce6bfc54743c9e2e&language=en-US&page=1`;
-      
-      
-  
+       const data = await fetch(rec_url);
+       const movies = await data.json();
+       setRecurl(movies.results);
+  {recUrl.map(movie => {
+       return(
+    <>
+    <p>{movie.title}</p>
+    </>
+  )
+       })}
    
     };
  
@@ -67,7 +74,7 @@ function Row() {
           src={`${image_url}${isLargeRow ? results.poster_path : results.backdrop_path}`} alt={results.original_title}></img>
       <p className="title">{results.title}</p>
    
-    
+    {handleClick()}
       </div> 
     
       
